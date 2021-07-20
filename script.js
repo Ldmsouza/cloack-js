@@ -9,8 +9,14 @@ function updateClock(){
     let minute = now.getMinutes();
     let second = now.getSeconds();
 
-    digitalElement.innerHTML = `${hour}:${minute}:${second}`;
+    digitalElement.innerHTML = `${fixZero(hour)}:${fixZero(minute)}:${fixZero(second)}`;
 
+}
+//funcão irá adicionar 0 ao tempo se ele for menor que 10. Ou seja, teremos 01-02-03... ao invés de 1,2,3... se for maior que 10, retorna só a variavel time
+function fixZero(time){
+
+    return time < 10 ? `0${time}` : time;
+    
 }
 
 setInterval(updateClock, 1000) //de 1 em 1seg ele irá executar essa func
