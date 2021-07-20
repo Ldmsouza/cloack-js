@@ -29,3 +29,4 @@ function fixZero(time){
 }
 
 setInterval(updateClock, 1000) //de 1 em 1seg ele irá executar essa func
+updateClock();
