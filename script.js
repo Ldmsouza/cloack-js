@@ -11,6 +11,9 @@ function updateClock(){
 
     digitalElement.innerHTML = `${fixZero(hour)}:${fixZero(minute)}:${fixZero(second)}`;
 
+    let sDeg = ((360 / 60) * second) - 90;
+    sElement.style.transform = `rotate(${sDeg}deg)`;
+
 }
 //funcão irá adicionar 0 ao tempo se ele for menor que 10. Ou seja, teremos 01-02-03... ao invés de 1,2,3... se for maior que 10, retorna só a variavel time
 function fixZero(time){
